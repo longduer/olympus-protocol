@@ -26,6 +26,9 @@ let RiskControl = artifacts.require("RiskControl");
 let WhitelistProvider = artifacts.require("WhitelistProvider");
 
 let MockToken = artifacts.require("MockToken");
+
+let OlympusBasicFund = artifacts.require("OlympusBasicFund");
+
 let mockTokenSupply = 10 ** 9 * 10 ** 18;
 let RebalanceProvider = artifacts.require("RebalanceProvider");
 
@@ -213,7 +216,7 @@ function deployOnDev(deployer, num) {
         StepProvider,
         Locker,
         TokenBroken,
-        [MockToken, "", "MOT", 18, mockTokenSupply]
+        [OlympusBasicFund, "MOToken", "MOT",'MOToken Chain', 'HT', 18]
       ])
     )
     .then(() => deployExchange(deployer, "development"))
