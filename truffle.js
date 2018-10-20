@@ -6,11 +6,10 @@ var mnemonics = {};
 module.exports = {
   networks: {
     development: {
-      host: "localhost",
+      host: "127.0.0.1",
       port: 8545,
-      network_id: "*" // Match any network id
-      //gasPrice: 1000000000,
-      //gas: 8e6
+      network_id: "*", // Match any network id
+      from:"0xb3a89b5c49be6acddcb8e97354e198e31b51eb46"
     },
     kovan: {
       provider: function() {

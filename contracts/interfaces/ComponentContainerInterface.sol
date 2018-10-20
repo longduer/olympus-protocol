@@ -1,7 +1,9 @@
 pragma solidity 0.4.24;
 
 
-contract ComponentContainerInterface {
+contract
+
+ComponentContainerInterface {
     mapping (bytes32 => address) components;
 
     event ComponentUpdated (bytes32 _name, address _componentAddress);
