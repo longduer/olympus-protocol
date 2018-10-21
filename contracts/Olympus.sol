@@ -14,14 +14,14 @@ contract Token{
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-contract MarmotToken is Token {
+contract OlympusFund is Token {
 
   //21000000,"Marmot Token",18,"MMT"
   string public name;     //"Marmot Token"
   uint8 public decimals;  //18
   string public symbol;   //"MMT"
 
-  function MarmotToken(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) public {
+  function OlympusFund(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) public {
     totalSupply = _initialAmount * 10 ** uint256(_decimalUnits);         // 设置初始总量
     balances[msg.sender] = totalSupply; // 初始token数量给予消息发送者，因为是构造函数，所以这里也是合约的创建者
 

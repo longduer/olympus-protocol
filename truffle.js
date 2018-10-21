@@ -7,9 +7,9 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 8545,
-      network_id: "*", // Match any network id
-      from:"0xb3a89b5c49be6acddcb8e97354e198e31b51eb46"
+      port: 7545,
+      from: "0xe4157D6199Db844e1a6A1A541aDB76111be29769",
+      network_id: "*" // Match any network id
     },
     kovan: {
       provider: function() {

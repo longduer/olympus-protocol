@@ -1,5 +1,5 @@
-var MarmotToken = artifacts.require("./MarmotToken");
+var Olympus = artifacts.require("./OlympusFund");
 
 module.exports = function (deployer) {
-  deployer.deploy(MarmotToken,21000000,'MMM Token',18,'MMM');
+  deployer.deploy(Olympus, 10000000000, 'NFTS Token',18,'NFTS');
 };

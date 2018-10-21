@@ -80,9 +80,13 @@ contract OlympusBasicFund is FundInterface, BaseDerivative, ERC20Extended, Stand
     }
 
     // ----------------------------- FUND INTERFACE -----------------------------
-    function buyTokens(bytes32 _exchangeId, ERC20Extended[] _tokens, uint[] _amounts, uint[] _minimumRates)
-         public onlyOwner returns(bool) {
-
+    function buyTokens(
+        bytes32 _exchangeId,
+        ERC20Extended[] _tokens,
+        uint[] _amounts,
+        uint[] _minimumRates)
+      public onlyOwner returns(bool)
+    {
          // Check we have the ethAmount required
         uint totalEthRequired = 0;
         for (uint i = 0; i < _amounts.length; i++) {
@@ -94,11 +98,15 @@ contract OlympusBasicFund is FundInterface, BaseDerivative, ERC20Extended, Stand
 
         require(
             OlympusExchangeInterface(getComponentByName(EXCHANGE))
-            .buyTokens.value(totalEthRequired)(_tokens, _amounts, _minimumRates, address(this), _exchangeId)
+            .buyTokens.value(totalEthRequired)(
+                _tokens,
+                _amounts,
+                _minimumRates,
+                address(this),
+                _exchangeId)
         );
         updateTokens(_tokens);
         return true;
-
     }
 
     function tokenSwap(bytes32 _exchangeId, ERC20Extended _src, ERC20Extended _dest, uint _amount, uint _rate)
